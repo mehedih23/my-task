@@ -1,15 +1,28 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import logo from '../assets/NavLogo.png'
+import CustomLink from './CustomLink';
 
 const Navbar = () => {
     const menuItems = <>
-        <li className='mx-1'><Link to='item1' className='font-bold text-secondary'>Item 1</Link></li>
-        <li className='mx-1'><Link to='item2' className='font-bold text-secondary'>Item 2</Link></li>
-        <li className='mx-1'><Link to='item3' className='font-bold text-secondary'>Item 3</Link></li>
-        <li className='mx-1'><Link to='item4' className='font-bold text-secondary'>Item 4</Link></li>
-        <li className='mx-1'><Link to='item5' className='font-bold text-secondary'>Item 5</Link></li>
-        <li className='mx-1'><Link to='item6' className='font-bold text-secondary'>Item 6</Link></li>
+        <li className='mx-1'>
+            <CustomLink to='/' className='font-bold text-secondary'>Home</CustomLink>
+        </li>
+        <li className='mx-1'>
+            <CustomLink to='features' className='font-bold text-secondary'>Features</CustomLink>
+        </li>
+        <li className='mx-1'>
+            <CustomLink to='community' className='font-bold text-secondary'>Community</CustomLink>
+        </li>
+        <li className='mx-1'>
+            <CustomLink to='pricing' className='font-bold text-secondary'>Pricing</CustomLink>
+        </li>
+        <li className='mx-1'>
+            <CustomLink to='faq' className='font-bold text-secondary'>FAQ</CustomLink>
+        </li>
+        <li className='mx-1'>
+            <CustomLink to='blog' className='font-bold text-secondary'>Blog</CustomLink>
+        </li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -32,7 +45,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className='btn btn-sm rounded-full bg-accent text-primary border-2 hover:text-accent'>Login</button>
+                <button className='btn btn-sm rounded-full bg-accent text-primary border-2 hover:text-accent'>
+                    <Link to='login'>Login</Link>
+                </button>
                 <div className="dropdown dropdown-hover dropdown-left">
                     <label tabIndex="0" className="m-2">
                         <div className="avatar">
@@ -42,8 +57,8 @@ const Navbar = () => {
                         </div>
                     </label>
                     <ul tabIndex="0" className="dropdown-content menu p-2 shadow-lg bg-base-100 rounded-box w-52">
-                        <li><Link to='item1'>Item 1</Link></li>
-                        <li><Link to='item2'>Item 2</Link></li>
+                        <li><Link to='item1' className='font-bold text-secondary'>Item 1</Link></li>
+                        <li><Link to='item2' className='font-bold text-secondary'>Item 2</Link></li>
                     </ul>
                 </div>
             </div>
